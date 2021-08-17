@@ -1,7 +1,5 @@
 const turf = require('@turf/turf');
 
-module.exports = {objDestination};
-
 const Compass = Object.freeze({
     NORTH : 'NORTH',
     EAST : 'EAST',
@@ -93,6 +91,10 @@ function oldbearing(A,B){
     return (360 - ((brng + 360)% 360));
 }
 
+// export for external access
+module.exports = {objDestination, Compass};
+
+// Debug Testing
 let obj = objDestination([1,4],[2,8]);
 console.log(obj.mSlope());
 console.log(obj.mIntercept());
